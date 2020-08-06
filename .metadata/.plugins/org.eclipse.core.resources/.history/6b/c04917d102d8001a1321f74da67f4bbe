@@ -1,0 +1,27 @@
+package com.blog.core.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.blog.core.domain.Blog;
+import com.blog.core.repository.BlogRepository;
+import com.blog.core.repository.CommentRepository;
+@Service
+public class CommentService {
+	@Autowired
+	CommentRepository commentRepository;
+	public List<Comment> findAllBlogs(){
+		return commentRepository.findAll();
+	}
+	public Comment saveBlog(Blog blog){
+		return commentRepository.save(blog);
+	}
+	public Comment editBlog(Blog blog){
+		return commentRepository.saveAndFlush(blog);
+	}
+	public void editBlog(int id){
+		commentRepository.deleteById(id);
+	}
+}

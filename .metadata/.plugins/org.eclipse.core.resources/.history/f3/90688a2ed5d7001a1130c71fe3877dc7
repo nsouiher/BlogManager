@@ -1,0 +1,8 @@
+package com.blog.core.domain;
+
+import java.util.Set;
+
+public class Blog {
+	 @OneToMany(mappedBy="blog")
+	    private Set<Comment> comments;
+}

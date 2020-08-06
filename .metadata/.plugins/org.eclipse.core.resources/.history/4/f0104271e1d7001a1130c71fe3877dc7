@@ -1,0 +1,5 @@
+package com.blog.core.repository;
+
+public interface BlogRepository {
+
+}

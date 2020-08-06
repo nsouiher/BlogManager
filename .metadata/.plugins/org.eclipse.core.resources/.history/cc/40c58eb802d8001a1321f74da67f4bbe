@@ -1,0 +1,5 @@
+package com.blog.core.service;
+
+public class CommentService {
+
+}

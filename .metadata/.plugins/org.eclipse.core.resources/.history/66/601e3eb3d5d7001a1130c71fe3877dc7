@@ -1,0 +1,5 @@
+package com.blog.core.domain;
+
+public class Comment {
+
+}

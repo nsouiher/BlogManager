@@ -1,0 +1,11 @@
+package com.blog.core.repository;
+
+import java.io.Serializable;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.blog.core.domain.Blog;
+
+public interface BlogRepository extends JpaRepository<Blog, Serializable>  {
+
+}

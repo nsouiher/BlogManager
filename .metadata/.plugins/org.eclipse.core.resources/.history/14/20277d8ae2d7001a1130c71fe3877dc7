@@ -1,0 +1,19 @@
+package com.blog.core.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.blog.core.domain.Blog;
+import com.blog.core.repository.BlogRepository;
+
+@Service
+public class BlogService {
+	@Autowired
+	BlogRepository blogRepository;
+	Optional<Blog> findAllBlogs(){
+		return blogRepository.findAll();
+	}
+
+}

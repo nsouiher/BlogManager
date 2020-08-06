@@ -1,0 +1,66 @@
+package com.blog.core.domain;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name="BLOG")
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class Blog {
+	public int getIdBlog() {
+		return idBlog;
+	}
+	public void setIdBlog(int idBlog) {
+		this.idBlog = idBlog;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+	public LocalDateTime getUpdateddAt() {
+		return updateddAt;
+	}
+	public void setUpdateddAt(LocalDateTime updateddAt) {
+		this.updateddAt = updateddAt;
+	}
+	public Set<Comment> getComments() {
+		return comments;
+	}
+	public void setComments(Set<Comment> comments) {
+		this.comments = comments;
+	}
+	
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int idBlog;
+	private String content;
+	private LocalDateTime createdAt;
+	private LocalDateTime updateddAt;
+	 @OneToMany(mappedBy="blog")
+	    private List<Comment> comments;
+}
